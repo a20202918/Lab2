@@ -4,10 +4,13 @@
 
     <item
         android:icon="@drawable/ic_smile"
+        android:onClick="accionSmileBar"
         android:title="Item"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
     <item
+        android:checkable="false"
         android:icon="@drawable/ic_action_name"
-        android:title="Item"
-        app:showAsAction="always" />
+        android:onClick="accionMasBar"
+        android:title="buttonAgregar"
+        app:showAsAction="ifRoom" />
 </menu>
