@@ -11,7 +11,7 @@ import android.view.MenuItem;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class EmpleadosList extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void accionSmileBar(MenuItem item){
-        Intent intent = new Intent (this, EmpleadosList.class);
+        Intent intent = new Intent (this, MainActivity.class);
         startActivity(intent);
     }
 
@@ -49,6 +49,5 @@ public class MainActivity extends AppCompatActivity {
         AdapterDatos adapter = new AdapterDatos(listDatos);
         recycler.setAdapter(adapter);
     }
-
 
 }
