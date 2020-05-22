@@ -37,8 +37,7 @@ public class CrearTrabajo extends AppCompatActivity {
             editTextSalarioMaximo.setError("Por favor ingrese el salario maximo");
         }else if(abreviacion.isEmpty()){
             editTextAbreviación.setError("Por favor ingrese una abreviación al empleo");
-        }
-        else{
+        }else{
             finish();
         }
 
