@@ -1,9 +1,12 @@
 package com.example.laboratorio2;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,8 +28,21 @@ public class AdapterDatos extends RecyclerView.Adapter<AdapterDatos.ViewHolderDa
     }
 
     @Override
-    public void onBindViewHolder(ViewHolderDatos holder, int position) {
+    public void onBindViewHolder(ViewHolderDatos holder, final int position) {
         holder.asignarDatos(listDatos.get(position));
+        holder.buttonBorrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("boton","Click en borrar"+position);
+            }
+        });
+
+        holder.buttonEditar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("boton","Click en editar"+position);
+            }
+        });
     }
 
     @Override
@@ -37,10 +53,14 @@ public class AdapterDatos extends RecyclerView.Adapter<AdapterDatos.ViewHolderDa
     public class ViewHolderDatos extends RecyclerView.ViewHolder {
 
         TextView dato;
+        Button buttonEditar;
+        Button buttonBorrar;
 
         public ViewHolderDatos(View itemView) {
             super(itemView);
             dato = itemView.findViewById(R.id.textViewInfo);
+            buttonEditar = itemView.findViewById(R.id.buttonEditar);
+            buttonBorrar = itemView.findViewById(R.id.buttonBorrar);
         }
 
         public void asignarDatos(String datos){
