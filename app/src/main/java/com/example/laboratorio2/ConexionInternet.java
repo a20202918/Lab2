@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -28,13 +29,15 @@ public class ConexionInternet extends AppCompatActivity {
     }
 
     public void obtenrApi(View view){
-        String url = "http://ec2-54-165-73-192.compute-1.amazonaws.com:9000/listar/trabajos";
+        String url = "https://my-json-server.typicode.com/typicode/demo/profile";
 
         StringRequest stringRequest = new StringRequest(StringRequest.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         Log.d("exito",response);
+                        TextView textView = findViewById(R.id.textViewRespuestaApi);
+                        textView.setText(response);
 
                     }
                 },
@@ -42,6 +45,8 @@ public class ConexionInternet extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Log.e("errorVol",error.getMessage());
+                        TextView textView = findViewById(R.id.textViewRespuestaApi);
+                        textView.setText(error.getMessage());
 
                     }
                 });
