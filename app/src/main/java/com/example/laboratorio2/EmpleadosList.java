@@ -13,22 +13,27 @@ import java.util.ArrayList;
 
 public class EmpleadosList extends AppCompatActivity {
     @Override
+    //Configuración del menú
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_menu4emp,menu);
         return true;
     }
 
-    public void accionMasBar(MenuItem item){
+    //Botón con un + para crear un empleado nuevo
+    public void accionMasEmp(MenuItem item){
+        Intent intent = new Intent (this, CrearEmpleado.class);
+        int requestCode = 1;
+        startActivityForResult(intent, requestCode);
+    }
+
+    //Botón con una flor para irse a la lista de trabajos
+    public void accionFlorBar(MenuItem item){
         Intent intent = new Intent ();
         setResult(RESULT_OK,intent);
         finish();
     }
 
-    public void accionFlorBar(MenuItem item){
-        Intent intent = new Intent (this, MainActivity.class);
-        startActivity(intent);
-    }
-
+    //Arreglos para el recycler view
     ArrayList<String> listDatos;
     RecyclerView recycler;
 

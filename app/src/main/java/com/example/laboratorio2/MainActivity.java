@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -28,23 +29,27 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     @Override
-    //Botones del menú
+    //Configuración del menú
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_4main,menu);
         return true;
     }
 
-    public void accionMasBar(MenuItem item){
+    //Botón con un + para crear un trabajo nuevo
+    public void accionMasMain(MenuItem item){
         Intent intent = new Intent (this, CrearTrabajo.class);
         int requestCode = 1;
         startActivityForResult(intent, requestCode);
     }
 
+    //Botón con un :) para irse a la lista de empleados
     public void accionSmileBar(MenuItem item){
         Intent intent = new Intent (this, EmpleadosList.class);
-        startActivity(intent);
+        int requestCode = 1;
+        startActivityForResult(intent, requestCode);
     }
 
+    //Arreglos para el recycler view
     ArrayList<String> listDatos;
     RecyclerView recycler;
 

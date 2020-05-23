@@ -10,7 +10,7 @@
     <item
         android:checkable="false"
         android:icon="@drawable/ic_action_name"
-        android:onClick="accionMasBar"
+        android:onClick="accionMasMain"
         android:title="buttonAgregar"
         app:showAsAction="ifRoom" />
 </menu>
