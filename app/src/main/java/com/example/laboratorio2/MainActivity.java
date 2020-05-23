@@ -4,16 +4,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
+    //Botones del menú
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_4main,menu);
         return true;
@@ -21,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void accionMasBar(MenuItem item){
         Intent intent = new Intent (this, CrearTrabajo.class);
-        startActivity(intent);
+        int requestCode = 1;
+        startActivityForResult(intent, requestCode);
     }
 
     public void accionSmileBar(MenuItem item){
@@ -49,6 +65,5 @@ public class MainActivity extends AppCompatActivity {
         AdapterDatos adapter = new AdapterDatos(listDatos);
         recycler.setAdapter(adapter);
     }
-
-
 }
+
