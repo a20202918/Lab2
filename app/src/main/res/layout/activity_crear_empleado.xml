@@ -161,6 +161,7 @@
         android:id="@+id/buttonCEgrabar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="finalizarCrearEmpleado"
         android:text="Grabar Datos" />
 
 </LinearLayout>
