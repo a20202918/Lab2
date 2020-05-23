@@ -19,8 +19,8 @@
         <activity android:name=".CrearTrabajo"
             android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".MainActivity">
-        <activity android:name=".ConexionInternet"
-            tools:ignore="WrongManifestParent">
+        <activity android:name=".ConexionInternet"></activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
