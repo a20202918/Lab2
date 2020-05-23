@@ -12,19 +12,19 @@ import android.view.MenuItem;
 import java.util.ArrayList;
 
 public class EmpleadosList extends AppCompatActivity {
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_4main,menu);
+        getMenuInflater().inflate(R.menu.menu_menu4emp,menu);
         return true;
     }
 
     public void accionMasBar(MenuItem item){
-        Intent intent = new Intent (this, CrearTrabajo.class);
-        startActivity(intent);
+        Intent intent = new Intent ();
+        setResult(RESULT_OK,intent);
+        finish();
     }
 
-    public void accionSmileBar(MenuItem item){
+    public void accionFlorBar(MenuItem item){
         Intent intent = new Intent (this, MainActivity.class);
         startActivity(intent);
     }
