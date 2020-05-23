@@ -26,8 +26,8 @@ public class CrearTrabajo extends AppCompatActivity {
         String salarioMinimo = editTextSalarioMinimo.getText().toString();
         EditText editTextSalarioMaximo = findViewById(R.id.editTextSalarioMaximo);
         String salarioMaximo = editTextSalarioMaximo.getText().toString();
-        EditText editTextAbreviación = findViewById(R.id.editTextAbreviacion);
-        String abreviacion = editTextAbreviación.getText().toString();
+        EditText editTextAbreviacion = findViewById(R.id.editTextAbreviacion);
+        String abreviacion = editTextAbreviacion.getText().toString();
 
         if(nombreEmpleo.isEmpty()){
             editTextNombreEmpleo.setError("Por favor ingrese el nombre");
@@ -36,7 +36,7 @@ public class CrearTrabajo extends AppCompatActivity {
         }else if(salarioMaximo.isEmpty()){
             editTextSalarioMaximo.setError("Por favor ingrese el salario maximo");
         }else if(abreviacion.isEmpty()){
-            editTextAbreviación.setError("Por favor ingrese una abreviación al empleo");
+            editTextAbreviacion.setError("Por favor ingrese una abreviación al empleo");
         }else{
             finish();
         }
