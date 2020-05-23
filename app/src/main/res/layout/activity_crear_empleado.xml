@@ -37,6 +37,24 @@
         android:layout_width="match_parent"
         android:layout_height="10dp" />
 
+    <EditText
+        android:id="@+id/editTextCEemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editTextCEcelular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Celular"
+        android:inputType="phone" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -67,28 +85,10 @@
         android:hint="Salario"
         android:inputType="phone" />
 
-    <EditText
-        android:id="@+id/editTextCEcelular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Celular"
-        android:inputType="phone" />
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/editTextCEemail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textEmailAddress" />
 
     </LinearLayout>
 
@@ -152,5 +152,15 @@
             android:layout_marginTop="0sp" />
 
     </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <Button
+        android:id="@+id/buttonCEgrabar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grabar Datos" />
 
 </LinearLayout>
