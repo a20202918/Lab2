@@ -1,4 +1,4 @@
-package com.example.laboratorio2;
+package com.example.laboratorio2.entities;
 
 public class Trabajo {
     private String jobId;

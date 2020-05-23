@@ -1,6 +1,10 @@
 package com.example.laboratorio2;
 
-public class Empleado extends Trabajador{
+import com.example.laboratorio2.entities.Departamento;
+import com.example.laboratorio2.entities.Trabajador;
+import com.example.laboratorio2.entities.Trabajo;
+
+public class Empleado extends Trabajador {
     private int phoneNumber;
     private Trabajo jobId;
     private double salary;
