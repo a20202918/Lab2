@@ -9,6 +9,15 @@ import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 public class ConexionInternet extends AppCompatActivity {
 
@@ -16,6 +25,29 @@ public class ConexionInternet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conexion_internet);
+    }
+
+    public void obtenrApi(View view){
+        String url = "http://ec2-54-165-73-192.compute-1.amazonaws.com:9000/listar/trabajos";
+
+        StringRequest stringRequest = new StringRequest(StringRequest.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("exito",response);
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("errorVol",error.getMessage());
+
+                    }
+                });
+
+                RequestQueue requestQueue = Volley.newRequestQueue(this);
+                requestQueue.add(stringRequest);
     }
 
     public boolean isInternetAvailable() {
