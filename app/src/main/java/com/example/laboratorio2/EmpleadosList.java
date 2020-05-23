@@ -4,49 +4,33 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.Network;
-import android.net.NetworkCapabilities;
-import android.net.NetworkInfo;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
-
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
-
+public class EmpleadosList extends AppCompatActivity {
     @Override
     //Configuración del menú
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_4main,menu);
+        getMenuInflater().inflate(R.menu.menu_menu4emp,menu);
         return true;
     }
 
-    //Botón con un + para crear un trabajo nuevo
-    public void accionMasMain(MenuItem item){
-        Intent intent = new Intent (this, CrearTrabajo.class);
+    //Botón con un + para crear un empleado nuevo
+    public void accionMasEmp(MenuItem item){
+        Intent intent = new Intent (this, CrearEmpleado.class);
         int requestCode = 1;
         startActivityForResult(intent, requestCode);
     }
 
-    //Botón con un :) para irse a la lista de empleados
-    public void accionSmileBar(MenuItem item){
-        Intent intent = new Intent (this, EmpleadosList.class);
-        int requestCode = 1;
-        startActivityForResult(intent, requestCode);
+    //Botón con una flor para irse a la lista de trabajos
+    public void accionFlorBar(MenuItem item){
+        Intent intent = new Intent ();
+        setResult(RESULT_OK,intent);
+        finish();
     }
 
     //Arreglos para el recycler view
@@ -70,5 +54,5 @@ public class MainActivity extends AppCompatActivity {
         AdapterDatos adapter = new AdapterDatos(listDatos);
         recycler.setAdapter(adapter);
     }
-}
 
+}
