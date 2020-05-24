@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 
 import com.android.volley.AuthFailureError;
@@ -55,9 +56,20 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, requestCode);
     }
 
-    //Arreglos para el recycler view
-    ArrayList<String> listDatos;
-    ArrayList<String> listTrabajos; //lista para listar trabajos
+    public void accionBotonEditar(View view){
+        /* AÑADIR AQUÍ LA ACTIVIDAD A LA QUE SE DIRIGE AL PRESIONAR EL BOTÓN EDITAR
+        Intent intent = new Intent (this, aqui.class);
+        int requestCode = 1;
+        startActivityForResult(intent, requestCode);*/
+    }
+
+    public void accionBotonBorrar(View view){
+        /* AÑADIR AQUÍ LA ACTIVIDAD A LA QUE SE DIRIGE AL PRESIONAR EL BOTÓN BORRAR
+        Intent intent = new Intent (this, aqui.class);
+        int requestCode = 1;
+        startActivityForResult(intent, requestCode);*/
+    }
+
     RecyclerView recycler;
 
     @Override
@@ -68,22 +80,14 @@ public class MainActivity extends AppCompatActivity {
         recycler = findViewById(R.id.recyclerView);
         recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-        listDatos = new ArrayList<String>();
-
-        for (int i = 0; i <= 50; i++) {
-            listDatos.add("Dato#" + i + " ");
-        }
-
         obtenerDeInternet();
-
-
     }
 
-    //Lista de empleados
+    //Lista de trabajos
     public void obtenerDeInternet() {
         if (isInternetAvailable()) {
             String url = "http://ec2-54-165-73-192.compute-1.amazonaws.com:9000/getApiKey";
-            Log.d("prueba","a");
+            //Log.d("prueba","a");
             StringRequest stringRequest = new StringRequest(StringRequest.Method.POST, url,
                     new Response.Listener<String>() {
                         @Override
@@ -92,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                             Gson gson = new Gson();
                             ApiKey apiKey = gson.fromJson(response, ApiKey.class);
                             final String key = apiKey.getApi_key();
-                            Log.d("exitoVol", key);
+                            //Log.d("exitoVol", key);
 
                             String url2 = "http://ec2-54-165-73-192.compute-1.amazonaws.com:9000/listar/trabajos";
 
