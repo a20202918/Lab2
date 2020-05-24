@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Arreglos para el recycler view
     ArrayList<String> listDatos;
+    ArrayList<String> listTrabajos; //lista para listar trabajos
     RecyclerView recycler;
 
     @Override
@@ -73,9 +74,9 @@ public class MainActivity extends AppCompatActivity {
             listDatos.add("Dato#" + i + " ");
         }
 
-        AdapterDatos adapter = new AdapterDatos(listDatos);
-        recycler.setAdapter(adapter);
         obtenerDeInternet();
+
+
     }
 
     //Lista de empleados
@@ -105,11 +106,19 @@ public class MainActivity extends AppCompatActivity {
                                             Gson gson = new Gson();
                                             ApiTrabajo apiTrabajo = gson.fromJson(response2, ApiTrabajo.class);
 
+                                            ArrayList<String> listTrabajos;
+                                            listTrabajos = new ArrayList<String>();
+
                                             Trabajo[] prueba = apiTrabajo.getTrabajos();
                                             for (int i = 0; i <prueba.length; i++){
-                                                String pruebaId = prueba[i].getJobId();
-                                                Log.d("exitoVol", pruebaId);
+                                                listTrabajos.add("\nId: " + prueba[i].getJobId() + "\nTitulo: "+prueba[i].getJobTitle()+"\nSalario Minimo: "+prueba[i].getMinSalary()+"\nSalario Maximo: "+prueba[i].getMaxSalary());
+                                                //String pruebaId = prueba[i].getJobId();
+                                                //Log.d("exitoVol", pruebaId);
                                             }
+                                           // return listTrabajos;
+
+                                            AdapterDatos adapter = new AdapterDatos(listTrabajos);
+                                            recycler.setAdapter(adapter);
                                         }
                                     },
                                     new Response.ErrorListener() {
