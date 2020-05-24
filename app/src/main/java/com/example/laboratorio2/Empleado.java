@@ -1,4 +1,4 @@
-package com.example.laboratorio2;
+package com.example.laboratorio2.entities;
 
 import com.example.laboratorio2.entities.Departamento;
 import com.example.laboratorio2.entities.Trabajador;
