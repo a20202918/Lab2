@@ -3,14 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:icon="@drawable/ic_smile"
-        android:onClick="accionSmileBar"
+        android:icon="@drawable/ic_flower"
+        android:onClick="accionFlorBar"
         android:title="Item"
         app:showAsAction="ifRoom" />
     <item
         android:checkable="false"
         android:icon="@drawable/ic_action_name"
-        android:onClick="accionMasMain"
+        android:onClick="accionMasEmp"
         android:title="buttonAgregar"
         app:showAsAction="ifRoom" />
 </menu>
