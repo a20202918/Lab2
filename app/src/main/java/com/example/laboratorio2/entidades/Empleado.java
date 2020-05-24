@@ -1,6 +1,6 @@
-package com.example.laboratorio2;
+package com.example.laboratorio2.entidades;
 
-public class Empleado extends Trabajador{
+public class Empleado extends Trabajador {
     private int phoneNumber;
     private Trabajo jobId;
     private double salary;

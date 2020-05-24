@@ -1,4 +1,4 @@
-package com.example.laboratorio2;
+package com.example.laboratorio2.entidades;
 
 public class Departamento {
     private int departamentId;
