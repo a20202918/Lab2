@@ -1,7 +1,7 @@
 package com.example.laboratorio2.entidades;
 
 public class Empleado extends Trabajador {
-    private int phoneNumber;
+    private String phoneNumber;
     private Trabajo jobId;
     private double salary;
     private double commissionPct;
@@ -9,7 +9,7 @@ public class Empleado extends Trabajador {
     private Departamento departamentId;
     private String createdBy;
 
-    public Empleado(String employeeId, String firstName, String lastName, String email, int phoneNumber, Trabajo jobId, double salary, double commissionPct, Trabajador managerId, Departamento departamentId, String createdBy) {
+    public Empleado(String employeeId, String firstName, String lastName, String email, String phoneNumber, Trabajo jobId, double salary, double commissionPct, Trabajador managerId, Departamento departamentId, String createdBy) {
         super(employeeId, firstName, lastName, email);
         this.phoneNumber = phoneNumber;
         this.jobId = jobId;
@@ -20,11 +20,11 @@ public class Empleado extends Trabajador {
         this.createdBy = createdBy;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

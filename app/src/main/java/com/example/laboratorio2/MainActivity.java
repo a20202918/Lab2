@@ -16,7 +16,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.RequestQueue;
@@ -51,20 +50,13 @@ public class MainActivity extends AppCompatActivity {
 
     //Botón con un :) para irse a la lista de empleados
     public void accionSmileBar(MenuItem item){
-        Intent intent = new Intent (this, EmpleadosList.class);
+        Intent intent = new Intent (this, EmpleadosLista.class);
         int requestCode = 1;
         startActivityForResult(intent, requestCode);
     }
 
     public void accionBotonEditar(View view){
         /* AÑADIR AQUÍ LA ACTIVIDAD A LA QUE SE DIRIGE AL PRESIONAR EL BOTÓN EDITAR
-        Intent intent = new Intent (this, aqui.class);
-        int requestCode = 1;
-        startActivityForResult(intent, requestCode);*/
-    }
-
-    public void accionBotonBorrar(View view){
-        /* AÑADIR AQUÍ LA ACTIVIDAD A LA QUE SE DIRIGE AL PRESIONAR EL BOTÓN BORRAR
         Intent intent = new Intent (this, aqui.class);
         int requestCode = 1;
         startActivityForResult(intent, requestCode);*/
@@ -80,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         recycler = findViewById(R.id.recyclerView);
         recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-        obtenerDeInternet();
+        //obtenerDeInternet();
     }
 
     //Lista de trabajos

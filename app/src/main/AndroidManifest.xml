@@ -14,14 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".EmpleadosList"></activity>
+        <activity android:name=".EmpleadosLista" />
         <activity
             android:name=".CrearEmpleado"
-            android:parentActivityName=".EmpleadosList"></activity>
+            android:parentActivityName=".EmpleadosLista" />
         <activity
             android:name=".CrearTrabajo"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".ConexionInternet"></activity>
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ConexionInternet" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +30,6 @@
             </intent-filter>
 
         </activity>
-
     </application>
 
 </manifest>

@@ -22,14 +22,20 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.laboratorio2.entidades.ApiEmp;
 import com.example.laboratorio2.entidades.ApiKey;
 import com.example.laboratorio2.entidades.ApiTrabajo;
+import com.example.laboratorio2.entidades.Departamento;
+import com.example.laboratorio2.entidades.Empleado;
+import com.example.laboratorio2.entidades.Trabajador;
+import com.example.laboratorio2.entidades.Trabajo;
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EmpleadosList extends AppCompatActivity {
+public class EmpleadosLista extends AppCompatActivity {
     @Override
     //Configuración del menú
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -87,16 +93,30 @@ public class EmpleadosList extends AppCompatActivity {
                                             Log.d("exitoVol", response2);
 
                                             Gson gson1 = new Gson();
-                                            ApiTrabajo apiEmpleado = gson1.fromJson(response2, ApiTrabajo.class);
-                                            //ApiEmpleado apiEmpleado = gson1.fromJson(response2, ApiEmpleado.class);
+                                            ApiEmp apiEmp = gson1.fromJson(response2, ApiEmp.class);
 
-                                            /*Empleado[] prueba = apiEmpleado.getEmpleados();
+                                            ArrayList<String> listEmpleados;
+                                            listEmpleados = new ArrayList<String>();
+
+                                            Empleado[] prueba = apiEmp.getEmpleados();
 
                                             for (int i = 0; i <prueba.length; i++){
-                                                //listEmp.add("\nId: " + prueba[i].getEmployeeId() + "\nNombre: "+prueba[i].getFirstName()+"\nApellido: "+prueba[i].getLastName()+"\nEmail: "+prueba[i].getEmail()+"Telefono\n: "+prueba[i].getPhoneNumber());
-                                                String pruebaId = prueba[i].getFirstName();
-                                                Log.d("exitoVol", pruebaId);
-                                            }*/
+                                                Trabajo trabajoEmp = prueba[i].getJobId();
+
+                                                //if (prueba[i].getManagerId() != null){
+                                                    Trabajador trabajadorEmp = prueba[i].getManagerId();
+                                                //}
+
+                                                Departamento departamentoEmp = prueba[i].getDepartamentId();
+
+                                                listEmpleados.add("\nId: " + prueba[i].getEmployeeId()+"\nNombre: " + prueba[i].getFirstName()+"\nApellido: " + prueba[i].getLastName()+"\nEmail: " + prueba[i].getEmail()+"\nTelefono: " + prueba[i].getPhoneNumber()+"\nSalario: " + prueba[i].getSalary()+"\nComision: " + prueba[i].getCommissionPct()+"\nTrabajo Id: " + trabajoEmp.getJobId());
+                                                //String pruebaId = prueba[i].getJobId();
+                                                //Log.d("exitoVol", pruebaId);
+                                            }
+                                            // return listTrabajos;
+
+                                            AdapterDatos adapter = new AdapterDatos(listEmpleados);
+                                            recycler.setAdapter(adapter);
 
                                         }
                                     },
@@ -115,7 +135,7 @@ public class EmpleadosList extends AppCompatActivity {
                                 }
                             };
 
-                            RequestQueue requestQueue2 = Volley.newRequestQueue(EmpleadosList.this);
+                            RequestQueue requestQueue2 = Volley.newRequestQueue(EmpleadosLista.this);
                             requestQueue2.add(stringRequest2);
                         }
                     },
