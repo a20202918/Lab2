@@ -102,18 +102,22 @@ public class EmpleadosLista extends AppCompatActivity {
 
                                             for (int i = 0; i <prueba.length; i++){
                                                 Trabajo trabajoEmp = prueba[i].getJobId();
-
-                                                //if (prueba[i].getManagerId() != null){
-                                                    Trabajador trabajadorEmp = prueba[i].getManagerId();
-                                                //}
-
+                                                Trabajador trabajadorEmp = prueba[i].getManagerId();
                                                 Departamento departamentoEmp = prueba[i].getDepartamentId();
 
-                                                listEmpleados.add("\nId: " + prueba[i].getEmployeeId()+"\nNombre: " + prueba[i].getFirstName()+"\nApellido: " + prueba[i].getLastName()+"\nEmail: " + prueba[i].getEmail()+"\nTelefono: " + prueba[i].getPhoneNumber()+"\nSalario: " + prueba[i].getSalary()+"\nComision: " + prueba[i].getCommissionPct()+"\nTrabajo Id: " + trabajoEmp.getJobId());
-                                                //String pruebaId = prueba[i].getJobId();
-                                                //Log.d("exitoVol", pruebaId);
+                                                //Log.d("empleo", departamentoEmp.getDepartamentName());
+
+                                                if (trabajadorEmp != null) {
+                                                    Log.d("empleo", "no-nulo"+trabajadorEmp.getFirstName());
+                                                    listEmpleados.add("\nId: " + prueba[i].getEmployeeId()+"\nNombre: " + prueba[i].getFirstName()+"\nApellido: " + prueba[i].getLastName()+"\nEmail: " + prueba[i].getEmail()+"\nTelefono: " + prueba[i].getPhoneNumber()+"\nSalario: " + prueba[i].getSalary()+"\nComision: " + prueba[i].getCommissionPct()+"\nTrabajo Id: " + trabajoEmp.getJobId()+"\n Jefe Id:"+ trabajadorEmp.getEmployeeId());
+
+                                                }
+                                                else{
+                                                    Log.d("empleo","nulo");
+                                                    listEmpleados.add("\nId: " + prueba[i].getEmployeeId()+"\nNombre: " + prueba[i].getFirstName()+"\nApellido: " + prueba[i].getLastName()+"\nEmail: " + prueba[i].getEmail()+"\nTelefono: " + prueba[i].getPhoneNumber()+"\nSalario: " + prueba[i].getSalary()+"\nComision: " + prueba[i].getCommissionPct()+"\nTrabajo Id: " + trabajoEmp.getJobId()+"\n Jefe Id: nulo");
+
+                                                }
                                             }
-                                            // return listTrabajos;
 
                                             AdapterDatos adapter = new AdapterDatos(listEmpleados);
                                             recycler.setAdapter(adapter);

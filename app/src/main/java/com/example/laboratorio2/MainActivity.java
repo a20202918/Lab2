@@ -62,6 +62,15 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, requestCode);*/
     }
 
+    public void accionBotonBorrar(View view){
+
+        Log.d("metodo","metodo");
+        /* AÑADIR AQUÍ LA ACTIVIDAD A LA QUE SE DIRIGE AL PRESIONAR EL BOTÓN EDITAR
+        Intent intent = new Intent (this, aqui.class);
+        int requestCode = 1;
+        startActivityForResult(intent, requestCode);*/
+    }
+
     RecyclerView recycler;
 
     @Override
@@ -72,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         recycler = findViewById(R.id.recyclerView);
         recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-        //obtenerDeInternet();
+        obtenerDeInternet();
     }
 
     //Lista de trabajos

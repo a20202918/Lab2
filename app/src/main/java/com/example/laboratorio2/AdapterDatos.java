@@ -35,8 +35,8 @@ public class AdapterDatos extends RecyclerView.Adapter<AdapterDatos.ViewHolderDa
             @Override
             public void onClick(View v) {
                 Log.d("boton","Click en borrar"+position);
-                Borrar borrar = new Borrar();
-                borrar.botonBorrar(position);
+                BorrarActivity borrar = new BorrarActivity();
+                borrar.obtenerDeInternet();
             }
         });
 
