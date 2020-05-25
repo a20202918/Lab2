@@ -8,67 +8,67 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="411dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
 
 
-        <TextView
-            android:id="@+id/textViewInfo"
+            <TextView
+                android:id="@+id/textViewInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:paddingLeft="10dp"
+                android:text="TextView" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:paddingLeft="10dp"
-            android:text="TextView" />
+            android:layout_height="60dp"
+            android:orientation="horizontal">
 
+            <Space
+                android:layout_width="132dp"
+                android:layout_height="50dp" />
+
+            <Button
+                android:id="@+id/buttonEditar"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:onClick="accionBotonEditar"
+                android:text="Editar" />
+
+            <Space
+                android:layout_width="70dp"
+                android:layout_height="50dp" />
+
+            <Button
+                android:id="@+id/buttonBorrar"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:onClick="accionBotonBorrar"
+                android:text="Borrar" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            tools:layout_editor_absoluteX="0dp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="0dp">
-
-        <Space
-            android:layout_width="132dp"
-            android:layout_height="53dp" />
-
-        <Button
-            android:id="@+id/buttonEditar"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:onClick="accionBotonEditar"
-            android:text="Editar" />
-
-        <Space
-            android:layout_width="70dp"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/buttonBorrar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="accionBotonBorrar"
-            android:text="Borrar" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/colorPrimary"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
