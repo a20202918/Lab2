@@ -7,10 +7,14 @@ public class Departamento {
     private int locationId;
     private String departamentShortName;
 
+    public Departamento() {
+
+    }
+
     public Departamento(int departamentId, String departamentName, String managerId, int locationId, String departamentShortName) {
         this.departamentId = departamentId;
         this.departamentName = departamentName;
-        this.managerId = "";
+        this.managerId = managerId;
         this.locationId = locationId;
         this.departamentShortName = departamentShortName;
     }

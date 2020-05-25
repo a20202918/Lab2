@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         recycler = findViewById(R.id.recyclerView);
         recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-        obtenerDeInternet();
+        //obtenerDeInternet();
     }
 
     //Lista de trabajos
