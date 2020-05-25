@@ -43,8 +43,21 @@ public class BorrarActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
 
+                            Log.d("exitoVol", response2);
+                            Gson gson = new Gson();
+                            ApiBorrar apiBorrar = gson.fromJson(response2, ApiBorrar.class);
 
-                            Log.d("exitoVol", "funciono");
+                            AlertDialog.Builder alertDialog = new AlertDialog.Builder(BorrarActivity.this);
+                            alertDialog.setMessage(apiBorrar.getMsg());
+                            alertDialog.setNeutralButton("Aceptar",
+                            new DialogInterface.OnClickListener(){
+
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Log.d("alerta", "click en aceptar");
+                                }
+                            });
+                            alertDialog.show();
 
                             }
                     },
