@@ -35,8 +35,9 @@ public class AdapterDatos extends RecyclerView.Adapter<AdapterDatos.ViewHolderDa
             @Override
             public void onClick(View v) {
                 Log.d("boton","Click en borrar"+position);
-                BorrarActivity borrar = new BorrarActivity();
-                borrar.obtenerDeInternet();
+                //Intent intent = new Intent(AdapterDatos.this,BorrarActivity.class);
+                //BorrarActivity borrar = new BorrarActivity();
+                //borrar.obtenerDeInternet();
             }
         });
 

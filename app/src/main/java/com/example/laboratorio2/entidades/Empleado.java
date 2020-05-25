@@ -60,7 +60,8 @@ public class Empleado extends Trabajador {
         this.managerId = managerId;
     }
 
-    public Departamento getDepartamentId() {
+    public Departamento getDepartamentId()
+    {
         return departamentId;
     }
 
