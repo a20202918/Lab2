@@ -68,7 +68,7 @@
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/spinner" />
+            app:layout_constraintTop_toBottomOf="@+id/spinnerDepartamento" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
@@ -78,7 +78,7 @@
             app:layout_constraintGuide_begin="70dp" />
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/spinnerDepartamento"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"

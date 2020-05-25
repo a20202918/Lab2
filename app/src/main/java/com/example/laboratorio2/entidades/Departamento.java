@@ -1,6 +1,7 @@
 package com.example.laboratorio2.entidades;
 
 public class Departamento {
+
     private int departamentId;
     private String departamentName;
     private String managerId;
@@ -13,22 +14,19 @@ public class Departamento {
         this.managerId = "";
         this.locationId = locationId;
         this.departamentShortName = departamentShortName;
+
     }
 
-    public int getDepartamentId() {
-        return departamentId;
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
     }
 
-    public void setDepartamentId(int departamentId) {
-        this.departamentId = departamentId;
+    public String getDepartmentName() {
+        return departmentName;
     }
 
-    public String getDepartamentName() {
-        return departamentName;
-    }
-
-    public void setDepartamentName(String departamentName) {
-        this.departamentName = departamentName;
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
     }
 
     public String getManagerId() {
@@ -53,5 +51,6 @@ public class Departamento {
 
     public void setDepartamentShortName(String departamentShortName) {
         this.departamentShortName = departamentShortName;
+
     }
 }

@@ -1,35 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".CrearEmpleado">
 
-    <EditText
-        android:id="@+id/editTextCEnombre"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Nombre"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/editTextCEapellido"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Apellido"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editTextCEnombre"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextCEnombre"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCEnombre" />
+        <EditText
+            android:id="@+id/editTextCEnombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Nombre"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextCEapellido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Apellido"
+            android:inputType="textPersonName" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
 
     <EditText
         android:id="@+id/editTextCEemail"
@@ -38,11 +44,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/editTextCEapellido"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextCEapellido"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCEapellido" />
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/editTextCEcelular"
@@ -51,55 +53,28 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Celular"
-        android:inputType="phone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editTextCEemail"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextCEemail"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCEemail"
-        app:layout_constraintVertical_bias="0.0" />
+        android:inputType="phone" />
 
-    <Spinner
-        android:id="@+id/spinnerECtrabajo"
-        android:layout_width="409dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCEtrabajos" />
+        android:orientation="horizontal">
 
-    <Spinner
-        android:id="@+id/spinnerECjefe"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCEcomision"
-        app:layout_constraintVertical_bias="0.428" />
+        <TextView
+            android:id="@+id/textViewCEtrabajos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="Trabajos"
+            android:textSize="18sp" />
 
-    <Spinner
-        android:id="@+id/spinnerECdepartamento"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewECdepartamento"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textViewCEtrabajos"
-        android:layout_width="67dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="16dp"
-        android:text="Trabajos"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextCEcelular"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/editTextCEcelular"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCEcelular" />
+        <Spinner
+            android:id="@+id/spinnerECtrabajo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:spinnerMode="dialog" />
+    </LinearLayout>
 
     <EditText
         android:id="@+id/editTextCEsalario"
@@ -108,11 +83,18 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Salario"
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="@+id/editTextCEcelular"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextCEcelular"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerECtrabajo" />
+        android:inputType="phone" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
 
     <EditText
         android:id="@+id/editTextCEcomision"
@@ -120,36 +102,66 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Comisión"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editTextCEsalario"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextCEsalario"
-        tools:layout_editor_absoluteY="395dp" />
+        android:inputType="textPersonName" />
 
-    <TextView
-        android:id="@+id/textViewCEjefe"
-        android:layout_width="43dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="16dp"
-        android:text="Jefe"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextCEcomision"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="@+id/editTextCEcomision"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCEcomision" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
 
-    <TextView
-        android:id="@+id/textViewECdepartamento"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textViewCEjefe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="Jefe"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/spinnerECjefe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:spinnerMode="dialog" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textViewECdepartamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="Departamento"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/spinnerECdepartamento"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0sp" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <Button
+        android:id="@+id/buttonCEgrabar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Departamento"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textViewCEjefe"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toStartOf="@+id/textViewCEjefe"
-        app:layout_constraintTop_toTopOf="@+id/spinnerECjefe"
-        app:layout_constraintVertical_bias="0.125" />
+        android:onClick="finalizarCrearEmpleado"
+        android:text="Grabar Datos" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
