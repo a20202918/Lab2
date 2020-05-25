@@ -1,32 +1,38 @@
 package com.example.laboratorio2.entidades;
 
 public class Departamento {
-
     private int departamentId;
     private String departamentName;
     private String managerId;
     private int locationId;
     private String departamentShortName;
 
+    public Departamento() {
+
+    }
+
     public Departamento(int departamentId, String departamentName, String managerId, int locationId, String departamentShortName) {
         this.departamentId = departamentId;
         this.departamentName = departamentName;
-        this.managerId = "";
+        this.managerId = managerId;
         this.locationId = locationId;
         this.departamentShortName = departamentShortName;
-
     }
 
-    public void setDepartmentId(int departmentId) {
-        this.departmentId = departmentId;
+    public int getDepartamentId() {
+        return departamentId;
     }
 
-    public String getDepartmentName() {
-        return departmentName;
+    public void setDepartamentId(int departamentId) {
+        this.departamentId = departamentId;
     }
 
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName;
+    public String getDepartamentName() {
+        return departamentName;
+    }
+
+    public void setDepartamentName(String departamentName) {
+        this.departamentName = departamentName;
     }
 
     public String getManagerId() {
@@ -51,6 +57,5 @@ public class Departamento {
 
     public void setDepartamentShortName(String departamentShortName) {
         this.departamentShortName = departamentShortName;
-
     }
 }
